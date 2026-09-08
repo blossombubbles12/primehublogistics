@@ -42,14 +42,14 @@ async function seed() {
 
   // 2. SEED DEFAULT TESTING USER (IF NOT EXISTS)
   const defaultUser = await pool.query("SELECT id FROM users WHERE email = $1", [
-    "admin@sinages.ng",
+    "admin@primehublogistics.com",
   ]);
   if (defaultUser.rows.length === 0) {
     await pool.query(
       `INSERT INTO users (email, hash, role, name, status, updated_at, created_at)
        VALUES ($1, $2, $3, $4, $5, $6, $6)`,
       [
-        "admin@sinages.ng",
+        "admin@primehublogistics.com",
         "$2b$10$Ukyi9yX3yXQZ.P7U.V3c.OXpGCO/O307mXoWp2K8I/j6eF3m57Hl.",
         "admin",
         "System Admin",
@@ -57,7 +57,7 @@ async function seed() {
         now,
       ]
     );
-    console.log("  ✓ Created Default Testing Admin: admin@sinages.ng / password");
+    console.log("  ✓ Created Default Testing Admin: admin@primehublogistics.com / password");
   } else {
     console.log("  • Admin user exists.");
   }
