@@ -1,2 +1,5 @@
 allowBuilds:
+  '@parcel/watcher': set this to true or false
   core-js: true
+  esbuild: set this to true or false
+  unrs-resolver: set this to true or false
